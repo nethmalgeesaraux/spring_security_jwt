@@ -17,7 +17,7 @@ import java.util.function.Function;
 public class JWTUtil {
 
     private final SecretKey key;
-    private static final long EXPIRATION_TIME = 20051123L;
+    private static final long EXPIRATION_TIME = 1000 * 60 * 60 * 24;
 
     public JWTUtil() {
         String secretString = "your-256-bit-secret";
