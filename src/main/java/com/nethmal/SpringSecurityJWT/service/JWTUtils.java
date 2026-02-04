@@ -14,13 +14,13 @@ import java.util.HashMap;
 import java.util.function.Function;
 
 @Component
-public class JWTUtil {
+public class JWTUtils {
 
+    private static final long EXPIRATION_TIME = 86400000; // 24 hours
     private final SecretKey key;
-    private static final long EXPIRATION_TIME = 1000 * 60 * 60 * 24;
 
-    public JWTUtil() {
-        String secretString = "your-256-bit-secret";
+    public JWTUtils() {
+        String secretString = "843567893696976453275974432697R634976R738467TR678T34865R6834R8763T478378637664538745673865783678548735687R3";
         byte[] keyBytes = secretString.getBytes(StandardCharsets.UTF_8);
         this.key = new SecretKeySpec(keyBytes, "HmacSHA256");
     }
