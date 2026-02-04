@@ -8,41 +8,23 @@ import lombok.Data;
 
 import java.util.List;
 
+
+
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ReqRes {
 
     private int statusCode;
-    private String errorMessage;
+    private String error;
     private String message;
-    private String accessToken;
+    private String token;
     private String refreshToken;
     private String expirationTime;
-
-    private String fullName;
+    private String name;
     private String email;
     private String role;
     private String password;
-
-    private List<Product> productList;
-    private String userReference;
-
-    public void setOurUsers(OurUsers ourUserResult) {
-        this.fullName = ourUserResult.getEmail();
-        this.email = ourUserResult.getEmail();
-        this.role = ourUserResult.getRole();
-    }
-
-    public void setError(String message) {
-        this.errorMessage = message;
-    }
-
-    public void setToken(String jwt) {
-        this.accessToken = jwt;
-    }
-
-    public String getToken() {
-        return this.accessToken;
-    }
+    private List<Product> products;
+    private OurUsers ourUsers;
 }
